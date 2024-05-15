@@ -5,8 +5,8 @@
     padding: 0; 
     box-sizing: border-box; 
     font-family: Raleway;
+    border-radius: 0;
 }
-
 
 header{
     display: flex;
@@ -38,7 +38,7 @@ header{
     gap: 40px;
     margin-bottom: 24px;
     padding: 30px 0;
-    background-color: rgb(102, 111, 119);
+    background-color: rgb(75, 89, 102);
 }
 
 .filter{
@@ -61,8 +61,8 @@ select{
 .results{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 30px 60px 120px 60px;
+    gap: 50px;
+    padding: 80px 60px 120px 60px;
 }
 
 .no-results {
@@ -117,8 +117,6 @@ select{
 .swiper{
     width: 100%;
     height: 30vh;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 }
 
 .swiper-pagination {
@@ -140,4 +138,155 @@ select{
 
 .swiper-pagination-bullet-active {
     background-color: black;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    color: white;
+    top: 60%;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after{
+    font-size: 30px;
+
+}
+
+.sort {
+    margin-left: 20%;
+}
+
+/* Modal */
+dialog {
+    z-index: 10;
+    position: fixed;
+    width: 45%;
+    min-height:75vh;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 400ms;
+    border: none;
+    position: relative;
+    padding-bottom: 42px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  #close-modal{
+    /* animation: fadeOut 800ms; */
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    border: none;
+    font-size: 2rem;
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+  }
+
+  .modal-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contents img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.modal-contents h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 8px;
+}
+
+.modal-contents h4 {
+    font-size: 24px;
+    margin-top: 16px;
+}
+
+.modal-ammenities {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.property-description {
+    font-weight: 300;
+    margin-top: 16px;
+    padding: 0px 60px;
+    line-height: 150%;
+}
+
+.booking-button {
+    padding: 12px 16px;
+    margin-top: 30px;
+    background-color: #bababa;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 1200px) {
+    header h1 {
+        font-size: 4em;
+        text-align: center;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    select {
+        width: 600px;
+    }
+
+    .results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    dialog {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    select {
+
+        max-width: 300px;
+    }
+
+    .results {
+        grid-template-columns: 1fr;
+    }
 }

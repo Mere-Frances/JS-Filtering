@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- c\ustom CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./style.css">
     <title>Filtering</title>
 </head>
+
 <body>
 
     <header>
         <div class="header-title">
             <h1>Pixel Realestate</h1>
-            <h5>Starting finding your forever home</h5>
+            <h5>Start finding your forever home</h5>
         </div>
     </header>
-    
+
     <div class="filter-container">
         <!-- Location Filter -->
         <div class="filter">
@@ -40,7 +42,7 @@
 
         <!-- Bedrooms -->
         <div class="filter">
-            <label for="bedrooms">Bedrooms Min.:</label>
+            <label for="bedrooms">Bedrooms Min.</label>
             <select name="bedrooms" id="bedrooms" class="full-width-select">
                 <option value="">Any</option>
                 <option value="1">1+</option>
@@ -54,7 +56,7 @@
 
         <!-- Bathrooms -->
         <div class="filter">
-            <label for="bathrooms">Bathrooms Min.:</label>
+            <label for="bathrooms">Bathrooms Min.</label>
             <select name="bathrooms" id="bathrooms" class="full-width-select">
                 <option value="">Any</option>
                 <option value="1">1+</option>
@@ -65,7 +67,7 @@
         </div>
 
         <div class="filter">
-            <label for="priceMin">Price Min:</label>
+            <label for="priceMin">Price Min.</label>
             <select name="priceMin" id="priceMin" class="full-width-select">
                 <option value="">Any</option>
                 <option value="100000">$100k</option>
@@ -83,7 +85,7 @@
 
         <!-- price max -->
         <div class="filter">
-            <label for="priceMax">Price Max:</label>
+            <label for="priceMax">Price Max.</label>
             <select name="priceMax" id="priceMax" class="full-width-select">
                 <option value="">Any</option>
                 <option value="1000000">$1M</option>
@@ -96,19 +98,45 @@
                 <option value="300000">$300k</option>
                 <option value="200000">$200k</option>
                 <option value="100000">$100k</option>
-                
+
+            </select>
+        </div>
+
+        <!-- sort -->
+        <div class="filter sort">
+            <label for="sortPrice">Sort</label>
+            <select name="sortPrice" id="sortPrice" class="full-width-select">
+                <option value="">Sort properties</option>
+                <option value="lowest" class="sorting-button" id="price-low-to-high-btn">Lowest first</option>
+                <option value="highest" class="sorting-button" id="price-high-to-low-btn">Highest first</option>
+                <option value="alphabetical" class="sorting-button" id="alphabetical-btn">A - Z</option>
             </select>
         </div>
 
         <!-- end of filter cont. -->
     </div>
 
+        <!-- Sorting Options -->
+        <!-- <div class="sorting-container">
+            <p>Sorting Options:</p>
+            <div class="sorting-btn-container">
+                <button class="sorting-button" id="priceLowToHigh">$ - $$$</button>
+                <button class="sorting-button" id="priceHighToLow">$$$ - $</button>
+                <button class="sorting-button" id="alphabetical">A - Z</button>
+            </div>
+        </div> -->
+
     <!-- results -->
     <div id="results" class="results"></div>
 
+    <!-- Modal *TO BO DONE* -->
+    <dialog id="details-modal">
+        <button id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-contents">
+            <!-- Populated via JS -->
+        </div>
+    </dialog>
 
-    <!-- modal - unfinished -->
-    
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -119,4 +147,5 @@
     <script src="./script.js"></script>
 
 </body>
+
 </html>
